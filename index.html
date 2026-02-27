@@ -1,0 +1,2466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGE — Gestão & Exames | Consultoria para Clínicas Médicas</title>
+    <meta name="description"
+        content="O PGE revoluciona o crescimento de clínicas médicas em todo o Brasil. Gestão estratégica de exames para multiplicar sua rentabilidade e reduzir a ociosidade da sua agenda.">
+    <meta name="keywords"
+        content="gestão de clínicas, faturamento clínica médica, ociosidade agenda, gestão de exames, consultoria clínica médica">
+    <meta name="author" content="PGE — Gestão & Exames">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pge.com.br/">
+    <meta property="og:title" content="PGE — Gestão & Exames | Consultoria para Clínicas Médicas">
+    <meta property="og:description"
+        content="O PGE revoluciona o crescimento de clínicas médicas em todo o Brasil. Gestão estratégica de exames para multiplicar sua rentabilidade.">
+    <meta property="og:image" content="https://www.pge.com.br/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.pge.com.br/">
+    <meta property="twitter:title" content="PGE — Gestão & Exames | Consultoria para Clínicas Médicas">
+    <meta property="twitter:description"
+        content="O PGE revoluciona o crescimento de clínicas médicas em todo o Brasil. Gestão estratégica de exames para multiplicar sua rentabilidade.">
+    <meta property="twitter:image" content="https://www.pge.com.br/og-image.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --black: #1A1A1A;
+            --gold: #C9A96E;
+            --gold-lt: #E8D5B0;
+            --gold-dk: #A3824A;
+            --white: #FFFFFF;
+            --offwhite: #F7F5F2;
+            --grey-lt: #E8E5E0;
+            --grey-md: #9B9B9B;
+            --grey-dk: #5A5A5A;
+            --font-d: 'DM Serif Display', Georgia, serif;
+            --font-b: 'DM Sans', sans-serif;
+            --ease: cubic-bezier(.22, .68, 0, 1.2);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-b);
+            background: var(--offwhite);
+            color: var(--black);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 64px;
+            transition: all .4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(26, 26, 26, .95);
+            backdrop-filter: blur(16px);
+            padding: 18px 64px;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, .06);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--font-b);
+            font-weight: 600;
+            font-size: .85rem;
+            padding: 10px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            letter-spacing: .02em;
+            transition: all .25s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        #hero {
+            background: var(--black);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 160px 64px 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Organic background shapes */
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .blob-1 {
+            width: 700px;
+            height: 700px;
+            background: var(--gold);
+            opacity: .04;
+            top: -200px;
+            right: -150px;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--gold);
+            opacity: .05;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--gold);
+            opacity: .08;
+            top: 40%;
+            right: 20%;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp .8s var(--ease) .1s forwards;
+        }
+
+        .hero-kicker::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-h1 {
+            font-family: var(--font-d);
+            font-size: clamp(2.8rem, 5.5vw, 5rem);
+            color: var(--white);
+            line-height: 1.08;
+            max-width: 760px;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp .8s var(--ease) .25s forwards;
+        }
+
+        .hero-h1 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.8;
+            max-width: 520px;
+            margin-bottom: 52px;
+            opacity: 0;
+            animation: fadeUp .8s var(--ease) .4s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp .8s var(--ease) .55s forwards;
+        }
+
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--font-b);
+            font-weight: 700;
+            font-size: .95rem;
+            padding: 16px 36px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all .3s var(--ease);
+        }
+
+        .btn-hero:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(201, 169, 110, .3);
+        }
+
+        .hero-scroll-hint {
+            color: rgba(255, 255, 255, .3);
+            font-size: .8rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-scroll-hint::before {
+            content: '';
+            width: 1px;
+            height: 32px;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        /* Hero stats strip */
+        .hero-stats {
+            display: flex;
+            gap: 0;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 48px;
+            opacity: 0;
+            animation: fadeUp .8s var(--ease) .7s forwards;
+        }
+
+        .hero-stat {
+            flex: 1;
+            padding-right: 48px;
+        }
+
+        .hero-stat+.hero-stat {
+            padding-left: 48px;
+            border-left: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-d);
+            font-size: 2.8rem;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .hero-stat-number span {
+            color: var(--gold);
+        }
+
+        .hero-stat-label {
+            font-size: .85rem;
+            color: rgba(255, 255, 255, .4);
+            line-height: 1.5;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 120px 64px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--gold-dk);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .label-light {
+            color: rgba(201, 169, 110, .7);
+        }
+
+        h2 {
+            font-family: var(--font-d);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            line-height: 1.15;
+            color: var(--black);
+        }
+
+        h2 em {
+            color: var(--gold-dk);
+            font-style: italic;
+        }
+
+        .h2-light {
+            color: var(--white);
+        }
+
+        .h2-light em {
+            color: var(--gold);
+        }
+
+        .lead {
+            font-size: 1.05rem;
+            color: var(--grey-dk);
+            line-height: 1.8;
+            max-width: 540px;
+            margin-top: 16px;
+        }
+
+        .lead-light {
+            color: rgba(255, 255, 255, .55);
+        }
+
+        /* ── SOBRE ── */
+        #sobre {
+            background: var(--white);
+            padding: 120px 64px;
+        }
+
+        .sobre-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+            margin-top: 72px;
+        }
+
+        .feature-list {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--grey-lt);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+            margin-top: 9px;
+        }
+
+        .feature-text {
+            font-size: .95rem;
+            color: var(--grey-dk);
+            line-height: 1.6;
+        }
+
+        .sobre-aside {
+            padding-top: 16px;
+        }
+
+        .sobre-big-number {
+            font-family: var(--font-d);
+            font-size: 7rem;
+            color: var(--black);
+            line-height: .85;
+            letter-spacing: -.04em;
+            margin-bottom: 8px;
+        }
+
+        .sobre-big-number span {
+            color: var(--gold);
+        }
+
+        .sobre-big-desc {
+            font-size: .9rem;
+            color: var(--grey-md);
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        .sobre-quote {
+            border-left: 2px solid var(--gold);
+            padding-left: 24px;
+        }
+
+        .sobre-quote p {
+            font-family: var(--font-d);
+            font-size: 1.2rem;
+            color: var(--grey-dk);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── PROMESSA ── */
+        #promessa {
+            background: var(--black);
+        }
+
+        .promessa-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-top: 72px;
+        }
+
+        .promessa-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .promessa-item {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+            transition: all .3s ease;
+            cursor: default;
+        }
+
+        .promessa-item:first-child {
+            border-top: 1px solid rgba(255, 255, 255, .07);
+        }
+
+        .promessa-item:hover {
+            padding-left: 8px;
+        }
+
+        .promessa-item-num {
+            font-family: var(--font-d);
+            font-size: 1rem;
+            color: var(--gold);
+            opacity: .5;
+            min-width: 28px;
+            padding-top: 2px;
+        }
+
+        .promessa-item:hover .promessa-item-num {
+            opacity: 1;
+        }
+
+        .promessa-item-body h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .promessa-item-body p {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.6;
+        }
+
+        .promessa-visual {
+            position: relative;
+        }
+
+        .promessa-visual-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(201, 169, 110, .15);
+            border-radius: 32px;
+            padding: 52px 44px;
+            text-align: center;
+        }
+
+        .promessa-visual-icon {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .promessa-visual-title {
+            font-family: var(--font-d);
+            font-size: 2rem;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .promessa-visual-title em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .promessa-visual-desc {
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.7;
+        }
+
+        /* ── DEPOIMENTOS ── */
+        #depoimentos {
+            background: var(--offwhite);
+        }
+
+        .depo-header {
+            margin-bottom: 64px;
+        }
+
+        .depo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .depo-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform .35s var(--ease);
+        }
+
+        .depo-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .depo-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 28px;
+            right: 32px;
+            font-family: var(--font-d);
+            font-size: 5rem;
+            color: var(--gold-lt);
+            line-height: 1;
+        }
+
+        .depo-text {
+            font-size: .95rem;
+            color: var(--grey-dk);
+            line-height: 1.8;
+            flex: 1;
+        }
+
+        .depo-footer {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .depo-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--black), var(--grey-dk));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-d);
+            font-size: 1.1rem;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .depo-name {
+            font-weight: 700;
+            font-size: .88rem;
+            color: var(--black);
+        }
+
+        .depo-role {
+            font-size: .78rem;
+            color: var(--grey-md);
+            margin-top: 2px;
+        }
+
+        /* ── PILARES ── */
+        #pilares {
+            background: var(--white);
+        }
+
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 64px;
+        }
+
+        .pilar {
+            padding: 48px 40px;
+            position: relative;
+            transition: background .3s ease;
+        }
+
+        .pilar:hover {
+            background: var(--offwhite);
+        }
+
+        .pilar-num {
+            font-family: var(--font-d);
+            font-size: 3.5rem;
+            color: var(--grey-lt);
+            line-height: 1;
+            margin-bottom: 20px;
+            transition: color .3s ease;
+        }
+
+        .pilar:hover .pilar-num {
+            color: var(--gold-lt);
+        }
+
+        .pilar-icon {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .pilar h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .pilar p {
+            font-size: .9rem;
+            color: var(--grey-dk);
+            line-height: 1.7;
+        }
+
+        .pilar-divider {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--grey-lt);
+        }
+
+        .pilar:last-child .pilar-divider {
+            display: none;
+        }
+
+        /* ── COMO FUNCIONA ── */
+        #como {
+            background: var(--black);
+        }
+
+        .como-layout {
+            margin-top: 72px;
+        }
+
+        .como-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .como-item {
+            padding: 48px 40px;
+            border-right: 1px solid rgba(255, 255, 255, .07);
+            transition: background .3s ease;
+        }
+
+        .como-item:last-child {
+            border-right: none;
+        }
+
+        .como-item:hover {
+            background: rgba(255, 255, 255, .03);
+        }
+
+        .como-step-num {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .como-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .como-item p {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.7;
+        }
+
+        .como-bottom {
+            margin-top: 2px;
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            padding: 48px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .como-bottom p {
+            font-family: var(--font-d);
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, .5);
+            max-width: 400px;
+            line-height: 1.4;
+        }
+
+        .como-bottom p em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .como-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .como-tag {
+            background: rgba(201, 169, 110, .1);
+            border: 1px solid rgba(201, 169, 110, .2);
+            color: rgba(201, 169, 110, .8);
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .03em;
+        }
+
+        /* ── PRESENÇA ── */
+        #presenca {
+            background: var(--offwhite);
+        }
+
+        .presenca-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 72px;
+        }
+
+        .estados-label {
+            font-size: .78rem;
+            color: var(--grey-md);
+            margin-bottom: 16px;
+        }
+
+        .estados-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 48px;
+        }
+
+        .estado-pill {
+            background: var(--white);
+            border: 1px solid var(--grey-lt);
+            color: var(--grey-dk);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: .8rem;
+            font-weight: 600;
+            transition: all .25s ease;
+            cursor: default;
+        }
+
+        .estado-pill:hover {
+            background: var(--black);
+            color: var(--gold);
+            border-color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .numeros-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .numero-row {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            justify-content: space-between;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--grey-lt);
+        }
+
+        .numero-row:first-child {
+            border-top: 1px solid var(--grey-lt);
+        }
+
+        .numero-val {
+            font-family: var(--font-d);
+            font-size: 2.8rem;
+            color: var(--black);
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .numero-val span {
+            color: var(--gold);
+        }
+
+        .numero-desc {
+            font-size: .88rem;
+            color: var(--grey-md);
+            text-align: right;
+            max-width: 200px;
+            line-height: 1.5;
+        }
+
+        /* ── UNIDADES / CLÍNICAS ── */
+        .unidades-list {
+            margin-top: 0;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            animation: fadeUp 0.5s ease;
+        }
+
+        .unidades-list.visible {
+            display: flex;
+        }
+
+        .unidade-card {
+            background: var(--white);
+            border: 1px solid var(--grey-lt);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .unidade-card:hover {
+            border-color: var(--gold);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .unidade-logo {
+            height: 24px;
+            width: auto;
+            max-width: 80px;
+            object-fit: contain;
+            object-position: left center;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .unidade-logo-placeholder {
+            height: 28px;
+            width: 28px;
+            border-radius: 6px;
+            background: var(--offwhite);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--grey-md);
+            font-size: 12px;
+            font-weight: bold;
+            font-family: var(--font-d);
+            flex-shrink: 0;
+        }
+
+        .unidade-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex: 1;
+        }
+
+        .unidade-info h4 {
+            font-size: 0.9rem;
+            color: var(--black);
+            margin: 0;
+        }
+
+        .unidade-phone {
+            font-size: 0.75rem;
+            color: var(--grey-dk);
+            font-weight: 500;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .unidade-phone svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .unidade-info p {
+            font-size: 0.75rem;
+            color: var(--grey-md);
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .estado-pill.active {
+            background: var(--black);
+            color: var(--gold);
+            border-color: var(--black);
+        }
+
+        /* ── CTA FINAL ── */
+        #cta-final {
+            background: var(--black);
+            padding: 160px 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cta-final::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 169, 110, .08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: var(--font-d);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .cta-title em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .cta-sub {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, .5);
+            margin-bottom: 52px;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--font-b);
+            font-weight: 700;
+            font-size: .95rem;
+            padding: 17px 38px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all .3s var(--ease);
+        }
+
+        .btn-gold:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(201, 169, 110, .3);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: rgba(255, 255, 255, .7);
+            font-family: var(--font-b);
+            font-weight: 600;
+            font-size: .95rem;
+            padding: 16px 37px;
+            border-radius: 999px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, .2);
+            transition: all .3s ease;
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(255, 255, 255, .5);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #111;
+            padding: 40px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-top: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-copy {
+            font-size: .78rem;
+            color: rgba(255, 255, 255, .25);
+        }
+
+        /* ── WPP FLOAT ── */
+        .wpp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: var(--white);
+            font-family: var(--font-b);
+            font-weight: 600;
+            font-size: .85rem;
+            padding: 13px 22px 13px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(37, 211, 102, .35);
+            transition: all .3s var(--ease);
+        }
+
+        .wpp-float:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 48px rgba(37, 211, 102, .5);
+        }
+
+        .wpp-float svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .75s ease, transform .75s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: .1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: .2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: .3s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: .4s;
+        }
+
+        /* ════════════════════════════════
+     FAQ
+  ════════════════════════════════ */
+        #faq {
+            padding: 120px 64px;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .faq-left {
+            position: sticky;
+            top: 100px;
+        }
+
+        .faq-title {
+            font-family: var(--font-d);
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            line-height: 1.15;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .faq-title em {
+            color: var(--gold-dk);
+            font-style: italic;
+        }
+
+        .faq-sub {
+            font-size: .95rem;
+            color: var(--grey-dk);
+            line-height: 1.75;
+            margin-bottom: 36px;
+        }
+
+        .faq-wpp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: var(--white);
+            font-family: var(--font-b);
+            font-weight: 600;
+            font-size: .85rem;
+            padding: 11px 20px 11px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all .3s var(--ease);
+        }
+
+        .faq-wpp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, .35);
+        }
+
+        .faq-wpp svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Accordion */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--grey-lt);
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--grey-lt);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 26px 0;
+            text-align: left;
+            font-family: var(--font-b);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black);
+            transition: color .25s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--gold-dk);
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid var(--grey-lt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all .3s var(--ease);
+        }
+
+        .faq-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: var(--grey-md);
+            transition: transform .35s var(--ease), stroke .25s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        .faq-item.open .faq-icon svg {
+            stroke: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .faq-item.open .faq-question {
+            color: var(--black);
+        }
+
+        .faq-answer {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height .45s cubic-bezier(.4, 0, .2, 1), padding .35s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 28px;
+            font-size: .93rem;
+            color: var(--grey-dk);
+            line-height: 1.8;
+        }
+
+        .faq-answer-inner strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+        }
+
+        /* ════════════════════════════════
+     FORMULÁRIO
+  ════════════════════════════════ */
+        #contato {
+            padding: 120px 64px;
+            background: var(--offwhite);
+        }
+
+        .form-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .form-left {}
+
+        .form-title {
+            font-family: var(--font-d);
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            line-height: 1.15;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .form-title em {
+            color: var(--gold-dk);
+            font-style: italic;
+        }
+
+        .form-sub {
+            font-size: .95rem;
+            color: var(--grey-dk);
+            line-height: 1.75;
+            margin-bottom: 48px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-icon-wrap {
+            width: 44px;
+            height: 44px;
+            background: var(--white);
+            border: 1px solid var(--grey-lt);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: all .25s ease;
+        }
+
+        .contact-item:hover .contact-icon-wrap {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        .contact-item-text {}
+
+        .contact-item-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--grey-md);
+            margin-bottom: 3px;
+        }
+
+        .contact-item-value {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        /* Form */
+        .form-card {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 48px 44px;
+            box-shadow: 0 4px 32px rgba(26, 26, 26, .06);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-grid .full {
+            grid-column: 1 / -1;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field label {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--grey-md);
+        }
+
+        .input {
+            font-family: var(--font-b);
+            font-size: .93rem;
+            color: var(--black);
+            background: var(--offwhite);
+            border: 1.5px solid transparent;
+            border-radius: 12px;
+            padding: 13px 16px;
+            outline: none;
+            transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+            width: 100%;
+        }
+
+        .input::placeholder {
+            color: var(--grey-md);
+        }
+
+        .input:focus {
+            background: var(--white);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 169, 110, .15);
+        }
+
+        select.input {
+            appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%239B9B9B' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 38px;
+        }
+
+        textarea.input {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .radio-option {
+            display: none;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 18px;
+            border-radius: 999px;
+            border: 1.5px solid var(--grey-lt);
+            font-size: .83rem;
+            font-weight: 600;
+            color: var(--grey-dk);
+            cursor: pointer;
+            transition: all .25s ease;
+            user-select: none;
+            background: var(--offwhite);
+        }
+
+        .radio-option:checked+.radio-label {
+            background: var(--black);
+            border-color: var(--black);
+            color: var(--white);
+        }
+
+        .radio-label:hover {
+            border-color: var(--gold);
+            color: var(--gold-dk);
+        }
+
+        .form-submit {
+            margin-top: 8px;
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-b);
+            font-weight: 700;
+            font-size: .95rem;
+            padding: 16px 36px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: all .3s var(--ease);
+        }
+
+        .btn-submit:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(201, 169, 110, .3);
+        }
+
+        .btn-submit svg {
+            transition: transform .3s var(--ease);
+        }
+
+        .btn-submit:hover svg {
+            transform: translateX(4px);
+        }
+
+        .form-privacy {
+            font-size: .75rem;
+            color: var(--grey-md);
+            max-width: 200px;
+            line-height: 1.5;
+        }
+
+        /* Success state */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 48px 0;
+        }
+
+        .form-success.visible {
+            display: block;
+        }
+
+        .form-success-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .form-success h3 {
+            font-family: var(--font-d);
+            font-size: 1.6rem;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .form-success p {
+            font-size: .93rem;
+            color: var(--grey-dk);
+            line-height: 1.7;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+
+            nav,
+            nav.scrolled {
+                padding: 20px 28px;
+            }
+
+            section,
+            #hero,
+            #cta-final,
+            #faq,
+            #contato {
+                padding: 80px 28px;
+            }
+
+            .faq-container,
+            .form-container,
+            .sobre-layout,
+            .promessa-layout,
+            .presenca-layout {
+                grid-template-columns: 1fr;
+                gap: 52px;
+            }
+
+            .faq-left {
+                position: static;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid .full {
+                grid-column: 1;
+            }
+
+            .form-card {
+                padding: 32px 24px;
+            }
+
+            .depo-grid,
+            .pilares-grid,
+            .como-items {
+                grid-template-columns: 1fr;
+            }
+
+            .pilar-divider {
+                display: none;
+            }
+
+            .como-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, .07);
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .hero-stat+.hero-stat {
+                padding-left: 0;
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, .08);
+                padding-top: 24px;
+            }
+
+            footer {
+                padding: 32px 28px;
+            }
+
+            .como-bottom {
+                flex-direction: column;
+            }
+
+            .numero-desc {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="nav-brand">
+            <img src="logo.svg" alt="PGE Gestão & Exames" class="brand-logo">
+        </div>
+        <a href="#cta-final" class="nav-cta">Fale conosco</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+        <div class="hero-blob blob-3"></div>
+
+        <div class="hero-inner">
+            <div class="hero-kicker">Consultoria para Clínicas Médicas</div>
+            <h1 class="hero-h1">Inteligência e força para levar sua clínica ao <em>próximo nível</em></h1>
+            <p class="hero-sub">O PGE revoluciona o crescimento de clínicas em todo o Brasil com uma metodologia única,
+                validada por mais de uma década de atuação prática no maior player do mercado.</p>
+            <div class="hero-actions">
+                <a href="#cta-final" class="btn-hero">
+                    Fale com nosso time
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <span class="hero-scroll-hint">Role para explorar</span>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number"><span>+</span>1M</div>
+                    <div class="hero-stat-label">Atendimentos realizados</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number"><span>+</span>100</div>
+                    <div class="hero-stat-label">Gestores treinados</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number"><span>+</span>13K</div>
+                    <div class="hero-stat-label">Médicos impactados</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">15</div>
+                    <div class="hero-stat-label">Estados atendidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container">
+            <div class="reveal">
+                <span class="label">Sobre o Método</span>
+                <h2>O que é o <em>PGE</em>?</h2>
+                <p class="lead">O PGE é uma metodologia exclusiva criada para transformar a gestão e os resultados de
+                    clínicas médicas — desenvolvida ao longo de mais de 10 anos de atuação no campo.</p>
+            </div>
+
+            <div class="sobre-layout">
+                <div class="reveal reveal-delay-1">
+                    <p style="font-size:.9rem;color:var(--grey-md);margin-bottom:8px;">Com ele, sua clínica passa a:</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-dot"></div><span class="feature-text">Aumentar o faturamento de forma
+                                estruturada</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-dot"></div><span class="feature-text">Reduzir a ociosidade das
+                                agendas</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-dot"></div><span class="feature-text">Identificar novas oportunidades de
+                                crescimento</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-dot"></div><span class="feature-text">Profissionalizar a gestão</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-dot"></div><span class="feature-text">Tomar decisões com base em dados
+                                reais</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sobre-aside reveal reveal-delay-2">
+                    <div class="sobre-big-number">10<span>+</span></div>
+                    <p class="sobre-big-desc">anos aprimorando a metodologia em clínicas de todo o país</p>
+                    <div class="sobre-quote">
+                        <p>Uma metodologia desenvolvida no campo, não em sala de aula — com evidências reais e
+                            resultados comprovados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMESSA -->
+    <section id="promessa">
+        <div class="container">
+            <div class="reveal">
+                <span class="label label-light">Promessa Principal</span>
+                <h2 class="h2-light">Exames que <em>multiplicam</em> a sua renda</h2>
+                <p class="lead lead-light">O PGE atua diretamente na jornada de exames, promovendo resultados concretos
+                    e crescimento previsível para sua clínica.</p>
+            </div>
+
+            <div class="promessa-layout">
+                <div class="promessa-items reveal reveal-delay-1">
+                    <div class="promessa-item">
+                        <span class="promessa-item-num">01</span>
+                        <div class="promessa-item-body">
+                            <h3>Expansão da capacidade de atendimento</h3>
+                            <p>Mais exames realizados com a mesma estrutura, reduzindo ociosidade e aumentando receita.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="promessa-item">
+                        <span class="promessa-item-num">02</span>
+                        <div class="promessa-item-body">
+                            <h3>Aumento da rentabilidade por paciente</h3>
+                            <p>Ticket médio maior com soluções complementares integradas à jornada do paciente.</p>
+                        </div>
+                    </div>
+                    <div class="promessa-item">
+                        <span class="promessa-item-num">03</span>
+                        <div class="promessa-item-body">
+                            <h3>Melhoria nos processos internos</h3>
+                            <p>Fluxos mais eficientes, menos retrabalho e maior satisfação dos pacientes.</p>
+                        </div>
+                    </div>
+                    <div class="promessa-item">
+                        <span class="promessa-item-num">04</span>
+                        <div class="promessa-item-body">
+                            <h3>Crescimento sustentável e previsível</h3>
+                            <p>Evolução estruturada, sem depender de sazonalidade ou ações pontuais.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promessa-visual reveal reveal-delay-2">
+                    <div class="promessa-visual-card">
+                        <span class="promessa-visual-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin: 0 auto 24px;">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </span>
+                        <h3 class="promessa-visual-title">Gestão completa da jornada de <em>exames</em></h3>
+                        <p class="promessa-visual-desc">Da solicitação ao laudo — cada etapa otimizada para gerar mais
+                            valor para sua clínica e seus pacientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+        <div class="container">
+            <div class="depo-header reveal">
+                <span class="label">Depoimentos</span>
+                <h2>Resultados reais em clínicas de <em>todo o Brasil</em></h2>
+            </div>
+
+            <div class="depo-grid">
+                <div class="depo-card reveal reveal-delay-1">
+                    <p class="depo-text">O PGE em minha clínica foi sinônimo de novas oportunidades e crescimento. O
+                        contato veio na hora certa, exatamente quando buscávamos melhorias para alavancar nossos
+                        serviços, aumentar o faturamento e fortalecer nossas estratégias de divulgação.</p>
+                    <div class="depo-footer">
+                        <div class="depo-avatar">P</div>
+                        <div>
+                            <div class="depo-name">Paloma Karolina</div>
+                            <div class="depo-role">Sócia da MedMais · Pernambuco</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="depo-card reveal reveal-delay-2">
+                    <p class="depo-text">Nossa parceria com o PGE está sendo muito importante, financeiramente falando.
+                        Hoje conseguimos oferecer aos nossos pacientes atendimentos mais completos e mais rápidos,
+                        fazendo com que nossas agendas não fiquem ociosas.</p>
+                    <div class="depo-footer">
+                        <div class="depo-avatar">N</div>
+                        <div>
+                            <div class="depo-name">Nira Lisboa</div>
+                            <div class="depo-role">Sócia da Clínica Popular Irajá · Rio de Janeiro</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="depo-card reveal reveal-delay-3">
+                    <p class="depo-text">Com a implantação do PGE tivemos uma verdadeira renovação. Conseguimos
+                        identificar pontos fracos, aprimorar processos e expandir o atendimento, contando com plataforma
+                        de última geração e equipe de suporte preparada para qualquer situação.</p>
+                    <div class="depo-footer">
+                        <div class="depo-avatar">S</div>
+                        <div>
+                            <div class="depo-name">Samanta</div>
+                            <div class="depo-role">Gerente · Clínica Mais Pacientes · Itajubá/MG</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILARES -->
+    <section id="pilares">
+        <div class="container">
+            <div class="reveal">
+                <span class="label">Os Três Pilares do PGE</span>
+                <h2>A base que sustenta o seu <em>crescimento</em></h2>
+            </div>
+
+            <div class="pilares-grid">
+                <div class="pilar reveal reveal-delay-1">
+                    <div class="pilar-divider"></div>
+                    <div class="pilar-num">01</div>
+                    <span class="pilar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--black)"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-bottom: 16px;">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </span>
+                    <h3>Transferência de Conhecimentos</h3>
+                    <p>Assessoria ativa, estratégica e contínua para evolução constante da sua clínica.</p>
+                </div>
+                <div class="pilar reveal reveal-delay-2">
+                    <div class="pilar-divider"></div>
+                    <div class="pilar-num">02</div>
+                    <span class="pilar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--black)"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-bottom: 16px;">
+                            <path d="M12 15l-3 3-9-9 9-9 3 3"></path>
+                            <path d="M21 21v-3l-5-5"></path>
+                            <path d="M21 21h-3l-5-5"></path>
+                        </svg>
+                    </span>
+                    <h3>Time de Experts</h3>
+                    <p>Mais de 10 anos de experiência prática no crescimento de clínicas em todo o Brasil.</p>
+                </div>
+                <div class="pilar reveal reveal-delay-3">
+                    <div class="pilar-divider"></div>
+                    <div class="pilar-num">03</div>
+                    <span class="pilar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--black)"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-bottom: 16px;">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </span>
+                    <h3>Inteligência Ativa de Dados</h3>
+                    <p>Informações monitoradas em tempo real para decisões mais seguras e lucrativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como">
+        <div class="container">
+            <div class="reveal">
+                <span class="label label-light">Como Funciona na Prática</span>
+                <h2 class="h2-light">Clínica e PGE: sinergia que <em>multiplica</em> resultados</h2>
+            </div>
+
+            <div class="como-layout">
+                <div class="como-items reveal reveal-delay-1">
+                    <div class="como-item">
+                        <span class="como-step-num">Passo 01</span>
+                        <h3>Gestão Estratégica de Exames</h3>
+                        <p>Toda a jornada de exames monitorada e otimizada para maximizar receita e reduzir ociosidade.
+                        </p>
+                    </div>
+                    <div class="como-item">
+                        <span class="como-step-num">Passo 02</span>
+                        <h3>PGE Analyser</h3>
+                        <p>Plataforma exclusiva de análise de dados que entrega insights em tempo real para sua gestão.
+                        </p>
+                    </div>
+                    <div class="como-item">
+                        <span class="como-step-num">Passo 03</span>
+                        <h3>Time Multidisciplinar</h3>
+                        <p>Especialistas em gestão, tecnologia e processos acompanhando sua clínica de perto.</p>
+                    </div>
+                </div>
+                <div class="como-bottom reveal reveal-delay-2">
+                    <p>Seu crescimento com <em>suporte completo</em> em cada etapa</p>
+                    <div class="como-tags">
+                        <span class="como-tag">PGE Analyser</span>
+                        <span class="como-tag">Gestão de Agenda</span>
+                        <span class="como-tag">Treinamento</span>
+                        <span class="como-tag">Análise de Dados</span>
+                        <span class="como-tag">Suporte Contínuo</span>
+                        <span class="como-tag">Faturamento</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENÇA -->
+    <section id="presenca">
+        <div class="container">
+            <div class="reveal">
+                <span class="label">Presença Nacional</span>
+                <h2>Implantado em clínicas de <em>todo o Brasil</em></h2>
+                <p class="lead">Presente em 15 estados nas 5 regiões brasileiras, com expertise regional e entendimento
+                    profundo de cada mercado.</p>
+            </div>
+
+            <div class="presenca-layout">
+                <div class="reveal reveal-delay-1">
+                    <p class="estados-label">Estados atendidos</p>
+                    <div class="estados-wrap" id="estados-wrap">
+                        <!-- Estados serão carregados dinamicamente via JS -->
+                    </div>
+
+                    <div class="unidades-list" id="unidades-list">
+                        <!-- Clínicas renderizadas dinamicamente aqui -->
+                    </div>
+                </div>
+
+                <div class="numeros-list reveal reveal-delay-2">
+                    <div class="numero-row">
+                        <div class="numero-val"><span>+</span>1M</div>
+                        <div class="numero-desc">Atendimentos realizados em clínicas parceiras</div>
+                    </div>
+                    <div class="numero-row">
+                        <div class="numero-val"><span>+</span>100</div>
+                        <div class="numero-desc">Gestores treinados com a metodologia PGE</div>
+                    </div>
+                    <div class="numero-row">
+                        <div class="numero-val"><span>+</span>13K</div>
+                        <div class="numero-desc">Médicos impactados diretamente pelo método</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ FAQ ══════════ -->
+    <section id="faq">
+        <div class="faq-container">
+
+            <div class="faq-left reveal">
+                <span class="label">Dúvidas Frequentes</span>
+                <h2 class="faq-title">Tudo que você precisa <em>saber</em></h2>
+                <p class="faq-sub">Respondemos as perguntas mais comuns sobre o método PGE. Não encontrou o que procura?
+                    Fale com a gente diretamente.</p>
+                <a href="#" class="faq-wpp dynamic-wpp" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Falar no WhatsApp
+                </a>
+            </div>
+
+            <div class="faq-list reveal reveal-delay-1">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O PGE é indicado para qualquer tipo de clínica?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">Sim. A metodologia PGE foi desenvolvida para clínicas médicas de
+                            diferentes portes e especialidades — de clínicas de atenção primária a policlínicas e
+                            clínicas especializadas. O método é adaptado à realidade de cada clínica, considerando seu
+                            porte, estrutura e mercado local.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Como funciona a implantação do PGE na minha clínica?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">O processo começa com um diagnóstico completo da operação — agenda,
+                            faturamento, fluxo de exames e processos internos. A partir daí, um time multidisciplinar
+                            define o plano de implantação personalizado e acompanha cada etapa de perto, garantindo que
+                            os resultados sejam atingidos com consistência.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quanto tempo leva para ver os primeiros resultados?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">As primeiras melhorias costumam ser percebidas ainda nas primeiras
+                            semanas, especialmente na ocupação da agenda e na organização dos processos internos.
+                            Resultados mais robustos de faturamento e rentabilidade se consolidam ao longo dos primeiros
+                            três meses de implantação.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O que é o PGE Analyser?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">O <strong>PGE Analyser</strong> é a plataforma exclusiva de
+                            inteligência de dados do método. Ela consolida as informações da sua clínica em tempo real —
+                            ocupação, faturamento, produtividade e tendências — e transforma esses dados em insights
+                            acionáveis para que você tome decisões com mais segurança e velocidade.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        O PGE atende clínicas fora dos grandes centros?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">Sim. O PGE está presente em 15 estados nas 5 regiões do Brasil,
+                            incluindo cidades do interior e regiões com menor densidade de serviços de saúde. A
+                            metodologia é adaptada às particularidades de cada mercado local, o que garante relevância e
+                            efetividade independentemente da localização da clínica.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Preciso trocar meu sistema de gestão atual?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">Não necessariamente. O PGE se integra ao sistema já utilizado pela
+                            clínica sempre que possível. A avaliação de tecnologia faz parte do diagnóstico inicial — e
+                            quando uma nova plataforma for recomendada, o processo de migração é acompanhado de perto
+                            pelo time PGE para garantir continuidade operacional.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Como é o suporte após a implantação?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-inner">O suporte é contínuo. Após a implantação, a clínica conta com
+                            acompanhamento ativo do time PGE — revisões periódicas de desempenho, atendimento para
+                            dúvidas operacionais e acesso ao PGE Analyser para monitoramento constante dos indicadores.
+                            O objetivo é garantir que o crescimento se sustente no longo prazo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ FORMULÁRIO ══════════ -->
+    <section id="contato">
+        <div class="form-container">
+
+            <div class="form-left reveal">
+                <span class="label">Entre em Contato</span>
+                <h2 class="form-title">Vamos conversar sobre a sua <em>clínica</em></h2>
+                <p class="form-sub">Preencha o formulário e um especialista do time PGE entrará em contato para entender
+                    o momento da sua clínica e apresentar as melhores oportunidades.</p>
+
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--black)"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <div class="contact-item-label">Abrangência</div>
+                            <div class="contact-item-value">15 estados · 5 regiões do Brasil</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--black)"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <div class="contact-item-label">Tempo de resposta</div>
+                            <div class="contact-item-value">Em até 24 horas úteis</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--black)"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <div class="contact-item-label">WhatsApp</div>
+                            <div class="contact-item-value">Atendimento direto com o time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-1">
+                <div class="form-card">
+
+                    <div id="form-content">
+                        <form id="contact-form" novalidate>
+                            <div class="form-grid">
+
+                                <div class="field">
+                                    <label for="nome">Nome</label>
+                                    <input class="input" type="text" id="nome" name="nome"
+                                        placeholder="Seu nome completo" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="cargo">Cargo</label>
+                                    <input class="input" type="text" id="cargo" name="cargo"
+                                        placeholder="Ex.: Sócio, Gestor, Diretor">
+                                </div>
+
+                                <div class="field">
+                                    <label for="clinica">Nome da Clínica</label>
+                                    <input class="input" type="text" id="clinica" name="clinica"
+                                        placeholder="Nome da sua clínica" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="estado">Estado</label>
+                                    <select class="input" id="estado" name="estado" required>
+                                        <option value="" disabled selected>Selecione o estado</option>
+                                        <option>Acre</option>
+                                        <option>Alagoas</option>
+                                        <option>Amapá</option>
+                                        <option>Amazonas</option>
+                                        <option>Bahia</option>
+                                        <option>Ceará</option>
+                                        <option>Distrito Federal</option>
+                                        <option>Espírito Santo</option>
+                                        <option>Goiás</option>
+                                        <option>Maranhão</option>
+                                        <option>Mato Grosso</option>
+                                        <option>Mato Grosso do Sul</option>
+                                        <option>Minas Gerais</option>
+                                        <option>Pará</option>
+                                        <option>Paraíba</option>
+                                        <option>Paraná</option>
+                                        <option>Pernambuco</option>
+                                        <option>Piauí</option>
+                                        <option>Rio de Janeiro</option>
+                                        <option>Rio Grande do Norte</option>
+                                        <option>Rio Grande do Sul</option>
+                                        <option>Rondônia</option>
+                                        <option>Roraima</option>
+                                        <option>Santa Catarina</option>
+                                        <option>São Paulo</option>
+                                        <option>Sergipe</option>
+                                        <option>Tocantins</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="email">E-mail</label>
+                                    <input class="input" type="email" id="email" name="email"
+                                        placeholder="seu@email.com.br" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="telefone">WhatsApp / Telefone</label>
+                                    <input class="input" type="tel" id="telefone" name="telefone"
+                                        placeholder="(00) 90000-0000">
+                                </div>
+
+                                <div class="field full">
+                                    <label>Qual o principal desafio da sua clínica hoje?</label>
+                                    <div class="radio-group">
+                                        <input type="radio" name="desafio" id="d1" value="faturamento"
+                                            class="radio-option">
+                                        <label for="d1" class="radio-label">Faturamento</label>
+                                        <input type="radio" name="desafio" id="d2" value="agenda" class="radio-option">
+                                        <label for="d2" class="radio-label">Ociosidade de agenda</label>
+                                        <input type="radio" name="desafio" id="d3" value="processos"
+                                            class="radio-option">
+                                        <label for="d3" class="radio-label">Processos internos</label>
+                                        <input type="radio" name="desafio" id="d4" value="dados" class="radio-option">
+                                        <label for="d4" class="radio-label">Gestão de dados</label>
+                                        <input type="radio" name="desafio" id="d5" value="crescimento"
+                                            class="radio-option">
+                                        <label for="d5" class="radio-label">Crescimento geral</label>
+                                    </div>
+                                </div>
+
+                                <div class="field full">
+                                    <label for="mensagem">Mensagem (opcional)</label>
+                                    <textarea class="input" id="mensagem" name="mensagem"
+                                        placeholder="Conte um pouco mais sobre sua clínica ou o que espera da conversa…"></textarea>
+                                </div>
+
+                                <div class="form-submit">
+                                    <button type="submit" class="btn-submit">
+                                        Quero falar com um especialista
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                    <p class="form-privacy">Seus dados são protegidos e usados apenas para entrar em
+                                        contato com você.</p>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="form-success" id="form-success">
+                        <div class="form-success-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#25D366"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Mensagem enviada!</h3>
+                        <p>Um especialista do time PGE entrará em contato com você em breve. Fique de olho no seu
+                            WhatsApp e e-mail.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final">
+        <div class="cta-inner reveal">
+            <span class="label label-light" style="display:block;text-align:center;margin-bottom:16px;">Pronto para
+                crescer?</span>
+            <h2 class="cta-title">Seu crescimento<br>começa <em>agora</em></h2>
+            <p class="cta-sub" id="cta-sub">Quero aumentar os resultados da minha clínica</p>
+            <div class="cta-btns">
+                <a href="#" class="btn-gold dynamic-wpp" target="_blank">Fale com o time PGE</a>
+                <a href="#sobre" class="btn-ghost">Saiba como funciona</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">
+            <img src="logo.svg" alt="PGE Gestão & Exames" class="brand-logo" style="opacity: 0.8; height: 32px;">
+        </div>
+        <p class="footer-copy">© 2025 PGE Gestão & Exames. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WPP FLOAT -->
+    <a href="#" class="wpp-float dynamic-wpp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Fale conosco via WhatsApp
+    </a>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        reveals.forEach(r => obs.observe(r));
+
+        // Fetch Config JSON for Dynamic Content
+        fetch('config.json?v=' + new Date().getTime())
+            .then(res => res.json())
+            .then(data => {
+                // Update WhatsApp Message
+                const ctaSub = document.getElementById('cta-sub');
+                if (ctaSub && data.whatsapp_message) {
+                    ctaSub.innerHTML = data.whatsapp_message;
+                }
+
+                // Update WhatsApp Links
+                const wppNum = data.whatsapp_number.replace(/\D/g, '');
+                const wppMsg = encodeURIComponent(data.whatsapp_message || '');
+                const wppLink = `https://wa.me/${wppNum}${wppMsg ? '?text=' + wppMsg : ''}`;
+
+                document.querySelectorAll('.dynamic-wpp').forEach(link => {
+                    link.href = wppLink;
+                });
+
+                // Update States Pill List & Units
+                const estadosWrap = document.getElementById('estados-wrap');
+                const unitsList = document.getElementById('unidades-list');
+                const units = data.units || [];
+
+                if (estadosWrap && units.length > 0) {
+                    estadosWrap.previousElementSibling.textContent = "Selecione um estado para ver nossas unidades";
+                    const uniqueStates = [...new Set(units.map(u => u.state))].sort();
+
+                    estadosWrap.innerHTML = uniqueStates.map(state => `<span class="estado-pill" data-state="${state}">${state}</span>`).join('');
+
+                    document.querySelectorAll('.estado-pill').forEach(pill => {
+                        pill.addEventListener('click', (e) => {
+                            document.querySelectorAll('.estado-pill').forEach(p => p.classList.remove('active'));
+                            e.target.classList.add('active');
+
+                            const selectedState = e.target.getAttribute('data-state');
+                            const filteredUnits = units.filter(u => u.state === selectedState);
+
+                            unitsList.innerHTML = filteredUnits.map(u => `
+                                <div class="unidade-card">
+                                    ${u.logo ? `<img src="${u.logo}" class="unidade-logo" alt="Logo da ${u.name}">` : `<div class="unidade-logo-placeholder">${u.name.charAt(0)}</div>`}
+                                    <div class="unidade-info">
+                                        <h4>${u.name}</h4>
+                                        ${u.phone ? `<div class="unidade-phone">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                            ${u.phone}
+                                        </div>` : ''}
+                                        <p>${u.address}</p>
+                                    </div>
+                                </div>
+                            `).join('');
+                            unitsList.classList.add('visible');
+                        });
+                    });
+                } else if (estadosWrap) {
+                    estadosWrap.previousElementSibling.textContent = "Estados atendidos";
+                    estadosWrap.innerHTML = "<span class='estado-pill' style='cursor:default;'>Em breve informados</span>";
+                }
+            })
+            .catch(err => console.error('Erro ao buscar config.json:', err));
+
+        // Accordion FAQ
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Abrir primeiro item
+        document.querySelector('.faq-item')?.classList.add('open');
+
+        // Form submit
+        document.getElementById('contact-form')?.addEventListener('submit', e => {
+            e.preventDefault();
+
+            // Aqui você pode adicionar lógica de envio AJAX/API (como enviar os dados para o backend)
+            // if (valid) submitFormData();
+
+            // Redireciona para a página de obrigado em uma nova aba
+            window.open('obrigado.html', '_blank');
+
+            // Opcional: Limpar o formulário após o "envio"
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>

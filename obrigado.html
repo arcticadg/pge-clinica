@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! — PGE Gestão & Exames</title>
+    <meta name="description" content="Agradecemos o seu contato. Entraremos em contato em breve.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --black: #1A1A1A;
+            --gold: #C9A96E;
+            --gold-lt: #E8D5B0;
+            --gold-dk: #A3824A;
+            --white: #FFFFFF;
+            --offwhite: #F7F5F2;
+            --grey-lt: #E8E5E0;
+            --grey-md: #9B9B9B;
+            --grey-dk: #5A5A5A;
+            --font-d: 'DM Serif Display', Georgia, serif;
+            --font-b: 'DM Sans', sans-serif;
+            --ease: cubic-bezier(.22, .68, 0, 1.2);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-b);
+            background: var(--black);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 169, 110, .08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .icon-wrap {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 169, 110, 0.1);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            color: var(--gold);
+        }
+
+        .icon-wrap svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        h1 {
+            font-family: var(--font-d);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, .7);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--font-b);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 16px 36px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all .3s var(--ease);
+        }
+
+        .btn-gold:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(201, 169, 110, .3);
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: auto;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.8;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="logo.svg" alt="PGE Gestão & Exames" class="brand-logo">
+
+    <div class="container">
+        <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+        </div>
+        <h1>Mensagem <em>Enviada!</em></h1>
+        <p>Agradecemos o seu interesse na PGE Gestão & Exames. Nossa equipe já recebeu as suas informações e entrará em
+            contato com você o mais breve possível.</p>
+
+        <a href="index.html" class="btn-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Voltar para o site
+        </a>
+    </div>
+
+</body>
+
+</html>
