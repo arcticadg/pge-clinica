@@ -1,0 +1,134 @@
+{
+    "whatsapp_number": "55987010457",
+    "whatsapp_message": "Quero aumentar os resultados da minha clínica",
+    "units": [
+        {
+            "id": "69a0de1198654",
+            "name": "ViverClin",
+            "state": "BA",
+            "phone": "(77) 99929-6585",
+            "address": "Endereço: Praça Manoel Novaes, nº 148 - Bairro Centro - CEP 46430-000 - Guanambi\/BA",
+            "logo": ""
+        },
+        {
+            "id": "69a0de3b4fd56",
+            "name": "Clínica Soler",
+            "state": "SP",
+            "phone": "(11) 2014 4599 - (11)96601-9400",
+            "address": "Endereço: Avenida Satélite, nº 84 - Bairro São Mateus - CEP 08.330-480 - São Paulo\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0de663b6d6",
+            "name": "Centro Médico Popular Saúde da Família",
+            "state": "SP",
+            "phone": "(11) 99412-9280 - 0800 521 0101",
+            "address": "Endereço: Avenida Luiz Pequini, nº1220 - Bairro Santa Terezinha - CEP. 09.780-250 - São Bernardo do Campo\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0de820e69e",
+            "name": "Odonto Medic",
+            "state": "MG",
+            "phone": "",
+            "address": "Endereço: Rua Monsenhor Bicalho nº 34 - Bairro Centro - CEP. 35950-000 – Alvinópolis\/MG",
+            "logo": ""
+        },
+        {
+            "id": "69a0deab47932",
+            "name": "Instituto Meu Doutor",
+            "state": "SP",
+            "phone": "(11) 4489-5205 - (11) 94122-7500",
+            "address": "Endereço: Rua Vinte e Um de Março, 210 - Bairro Belém Estação - CEP. 07.901-040 - Francisco Morato\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0decaed2d5",
+            "name": "Clínica MedMais",
+            "state": "PE",
+            "phone": "(81) 2153-1912",
+            "address": "Endereço: Av. Deputado Jose Mendonca Bezerra, nº 294 - Bairro Centro - CEP. 37. 505-034 - Belo Jardim\/PE",
+            "logo": ""
+        },
+        {
+            "id": "69a0dee5872b1",
+            "name": "Clínica Mais Pacientes",
+            "state": "MG",
+            "phone": "(35) 3629-8686 - (35) 988714299",
+            "address": "Endereço: Avenida dos Ferroviários, nº 75 - Bairro Boa Vista - CEP. 37. 505-034 – Itajubá\/MG",
+            "logo": ""
+        },
+        {
+            "id": "69a0df0d761d9",
+            "name": "Idealize Saúde",
+            "state": "RS",
+            "phone": "(51) 3511-3320",
+            "address": "Endereço: Rua Isabel Bastos, 199 - Bairro Centro - CEP. 94.410-250 – Viamão\/RS",
+            "logo": ""
+        },
+        {
+            "id": "69a0df337ee13",
+            "name": "Clínica Doutor Itu Life",
+            "state": "SP",
+            "phone": "(11) 4025-1112 - (11) 4025-1184",
+            "address": "Endereço: Rua Capitão Silvio Fleming, 469 - Bairro Vila Nova - CEP 13.309-010 – Itu\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0df4ec02d2",
+            "name": "Saúde Mais Clínica Médica",
+            "state": "SP",
+            "phone": "(11) 93721-7392",
+            "address": "Endereço: Rua Antonio Jorge, 32 - Bairro Jardim São Paulo - CEP. 07110-020 – Guarulhos\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0df6cbfcee",
+            "name": "Centro Médico Popular Saúde da Família",
+            "state": "SP",
+            "phone": "(13) 3327-5719",
+            "address": "Endereço: Rua Cunhambebe, nº 340, Loja 03 - Bairro Jardim Cunhambebe - CEP. 11.450-090 – Guarujá\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0df95b8813",
+            "name": "Centro Médico e Odontológico de São Vicente",
+            "state": "SP",
+            "phone": "(31) 99709-1984",
+            "address": "Endereço: Av. Deputado Ulisses Guimarães, nº 1.443 - Bairro Jardim Rio Branco - CEP. 11.347-070 - São Vicente\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0dfb7f3ad4",
+            "name": "Centro Médico Popular Saúde da Família Santos",
+            "state": "SP",
+            "phone": "(13) 3385-2485",
+            "address": "Endereço: Av. Nossa Senhora de Fátima, nº 555 - Bairro Chico de Paula - CEP. 11.085-201 – Santos\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0dfd6484ed",
+            "name": "Centro Médico Campo Grande Saúde da Família",
+            "state": "SP",
+            "phone": "(19) 3221-7100",
+            "address": "Endereço: Rua Doutor Domingos Rimoli Neto, 169 - Bairro Parque Valença - CEP. 13.058-524 – Campinas\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0dff711737",
+            "name": "Clínica Vitta Care",
+            "state": "SP",
+            "phone": "(17) 3322-8581",
+            "address": "Endereço: Av. Vinte e Um, nº 355 - Bairro Centro - CEP. 14.780-310 – Barretos\/SP",
+            "logo": ""
+        },
+        {
+            "id": "69a0e01232f13",
+            "name": "Clínica Abrazi Araçatuba",
+            "state": "SP",
+            "phone": "(18) 3637-9000",
+            "address": "Endereço: Av. Odorindo Perenha, 620, SL J Piso Superior - Bairro Umuarama - CEP 16.013-230 – Araçatuba\/SP",
+            "logo": ""
+        }
+    ]
+}
