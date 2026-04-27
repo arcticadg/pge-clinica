@@ -1,19 +1,21 @@
+# ── Página inicial ─────────────────────────────────────────────────────────
+DirectoryIndex index.html index.php
+
 # ── Bloqueia acesso direto a arquivos sensíveis ────────────────────────────
 <FilesMatch "^(credentials\.php|rate_limit\.json|config\.json)$">
-    Order allow,deny
-    Deny from all
+    Require all denied
 </FilesMatch>
 
 # ── Bloqueia listagem de diretórios ────────────────────────────────────────
 Options -Indexes
 
-# ── Bloqueia acesso direto à pasta uploads ─────────────────────────────────
+# ── Bloqueia PHP na pasta uploads ──────────────────────────────────────────
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^uploads/.*\.php$ - [F,L]
 </IfModule>
 
-# ── Headers de segurança adicionais ───────────────────────────────────────
+# ── Headers de segurança ───────────────────────────────────────────────────
 <IfModule mod_headers.c>
     Header always set X-Frame-Options "DENY"
     Header always set X-Content-Type-Options "nosniff"
