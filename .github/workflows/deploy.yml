@@ -31,11 +31,20 @@ jobs:
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             --exclude='.git/' \
             --exclude='.github/' \
+            --exclude='.user.ini' \
+            --exclude='.htaccess' \
             --exclude='credentials.php' \
             --exclude='config.json' \
             --exclude='rate_limit.json' \
             --exclude='uploads/' \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/
+
+      # 3b. Envia .htaccess separadamente (sem --delete para não conflitar)
+      - name: Atualizar .htaccess
+        run: |
+          rsync -avz \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            .htaccess ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/.htaccess
 
       # 4. Ajusta permissões na VPS
       - name: Corrigir permissões
