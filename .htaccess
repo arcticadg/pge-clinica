@@ -1,10 +1,19 @@
 # ── Página inicial ─────────────────────────────────────────────────────────
 DirectoryIndex index.html index.php
 
-# ── Bloqueia acesso direto a arquivos sensíveis ────────────────────────────
-<FilesMatch "^(credentials\.php|rate_limit\.json|config\.json)$">
+# ── Bloqueia arquivos sensíveis (NÃO inclui config.json — lido pelo JS) ───
+<FilesMatch "^(credentials\.php|rate_limit\.json)$">
     Require all denied
 </FilesMatch>
+
+# ── Restringe admin.php por IP ─────────────────────────────────────────────
+# Adicione aqui os IPs autorizados a acessar o painel.
+# Para liberar temporariamente para qualquer IP, comente este bloco.
+<Files "admin.php">
+    Require all granted
+    # Para restringir por IP, substitua a linha acima por:
+    # Require ip SEU.IP.AQUI
+</Files>
 
 # ── Bloqueia listagem de diretórios ────────────────────────────────────────
 Options -Indexes
