@@ -98,8 +98,11 @@ if ($setup_mode) {
             $php  = "<?php\ndefined('PGE_ADMIN') or die('Acesso negado.');\n"
                   . "\$ADMIN_EMAIL = " . var_export($email, true) . ";\n"
                   . "\$ADMIN_HASH  = " . var_export($hash,  true) . ";\n";
-            file_put_contents(CRED_FILE, $php);
-            header('Location: admin.php?setup_ok=1'); exit;
+            if (file_put_contents(CRED_FILE, $php) === false) {
+                $setup_erro = 'Erro: o servidor não tem permissão para gravar credentials.php. Acesse a VPS e rode: chmod 755 ' . escapeshellcmd(__DIR__);
+            } else {
+                header('Location: admin.php?setup_ok=1'); exit;
+            }
         }
     }
     // Exibe form de setup
