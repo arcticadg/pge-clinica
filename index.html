@@ -804,17 +804,34 @@
         document.querySelector('.faq-item')?.classList.add('open');
 
         // Form submit
-        document.getElementById('contact-form')?.addEventListener('submit', e => {
+        document.getElementById('contact-form')?.addEventListener('submit', async e => {
             e.preventDefault();
+            const form = e.target;
+            const btn  = form.querySelector('.btn-submit');
+            const orig = btn.innerHTML;
 
-            // Aqui você pode adicionar lógica de envio AJAX/API (como enviar os dados para o backend)
-            // if (valid) submitFormData();
+            // Loading
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando…';
 
-            // Redireciona para a página de obrigado em uma nova aba
-            window.open('obrigado.html', '_blank');
+            try {
+                const data = new FormData(form);
+                const res  = await fetch('contato.php', { method: 'POST', body: data });
+                const json = await res.json();
 
-            // Opcional: Limpar o formulário após o "envio"
-            e.target.reset();
+                if (json.ok) {
+                    form.reset();
+                    window.location.href = 'obrigado.html';
+                } else {
+                    alert(json.erro || 'Erro ao enviar. Tente novamente.');
+                    btn.disabled = false;
+                    btn.innerHTML = orig;
+                }
+            } catch {
+                alert('Falha de conexão. Verifique sua internet e tente novamente.');
+                btn.disabled = false;
+                btn.innerHTML = orig;
+            }
         });
     </script>
 </body>

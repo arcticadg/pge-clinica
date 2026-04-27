@@ -2,6 +2,7 @@
 credentials.php
 rate_limit.json
 config.json
+smtp_config.php
 uploads/
 
 # Dependências
