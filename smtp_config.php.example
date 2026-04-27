@@ -1,0 +1,14 @@
+<?php
+// Copie este arquivo para smtp_config.php e preencha com as credenciais reais
+// smtp_config.php NÃO deve ser commitado no Git
+
+define('SMTP_HOST',  'mail.seudominio.com.br'); // Ex: mail.pgeclinicas.com.br
+define('SMTP_PORT',  465);                       // 465 (SSL) ou 587 (TLS)
+define('SMTP_USER',  'contato@seudominio.com.br');
+define('SMTP_PASS',  'sua-senha-aqui');
+define('SMTP_FROM',  'contato@seudominio.com.br');
+define('SMTP_NAME',  'PGE Clínicas');            // Nome exibido no e-mail
+define('MAIL_TO',    'destinatario@seudominio.com.br'); // Quem recebe os leads
+
+// Webhook (opcional) - Se preenchido, os dados também serão enviados para esta URL
+define('WEBHOOK_URL', ''); // Ex: https://hooks.zapier.com/hooks/catch/...
