@@ -52,6 +52,10 @@ jobs:
           ssh -i ~/.ssh/deploy_key \
             -o StrictHostKeyChecking=no \
             ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} \
-            "find ${{ secrets.VPS_PATH }} -type f \( -name '*.php' -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.svg' \) -exec chmod 644 {} \; && \
+            "find ${{ secrets.VPS_PATH }} -type f -exec chmod 644 {} \; && \
              find ${{ secrets.VPS_PATH }} -type d -exec chmod 755 {} \; && \
-             echo 'Deploy concluido em '$(date)"
+             chown www:nogroup ${{ secrets.VPS_PATH }}/config.json 2>/dev/null || true && \
+             chown www:nogroup ${{ secrets.VPS_PATH }}/credentials.php 2>/dev/null || true && \
+             chown www:nogroup ${{ secrets.VPS_PATH }}/rate_limit.json 2>/dev/null || true && \
+             chown -R www:nogroup ${{ secrets.VPS_PATH }}/uploads 2>/dev/null || true && \
+             echo 'Deploy concluido em '\$(date)"
