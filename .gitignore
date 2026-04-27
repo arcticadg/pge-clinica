@@ -1,0 +1,14 @@
+# Arquivos sensíveis — nunca versionar
+credentials.php
+rate_limit.json
+config.json
+uploads/
+
+# Dependências
+node_modules/
+vendor/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
