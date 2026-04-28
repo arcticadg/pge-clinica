@@ -152,7 +152,9 @@ if (defined('WEBHOOK_URL') && !empty(WEBHOOK_URL)) {
         'telefone' => $telefone,
         'desafio'  => $desafio_label,
         'mensagem' => $mensagem,
-        'data'     => date('Y-m-d H:i:s')
+        'data'     => date('Y-m-d H:i:s'),
+        'origem'   => 'site-pge',
+        'site-pge' => true
     ]);
 
     $ch = curl_init(WEBHOOK_URL);
