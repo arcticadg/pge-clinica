@@ -31,13 +31,17 @@ $clinica  = campo('clinica',  true);
 $email    = campo('email',    true);
 $cargo    = campo('cargo');
 $estado   = campo('estado');
-$telefone = campo('telefone');
+$telefone = campo('telefone', true);
 $desafio  = campo('desafio');
 $mensagem = campo('mensagem');
 
 // Validações básicas
-if (!$nome || !$clinica || !$email) {
+if (!$nome || !$clinica || !$email || !$telefone) {
     echo json_encode(['ok' => false, 'erro' => 'Preencha os campos obrigatórios.']);
+    exit;
+}
+if (preg_match('/[a-zA-Z]/', $telefone) || strlen(preg_replace('/[^0-9]/', '', $telefone)) < 10) {
+    echo json_encode(['ok' => false, 'erro' => 'Telefone inválido.']);
     exit;
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -154,7 +158,8 @@ if (defined('WEBHOOK_URL') && !empty(WEBHOOK_URL)) {
         'mensagem' => $mensagem,
         'data'     => date('Y-m-d H:i:s'),
         'origem'   => 'site-pge',
-        'site-pge' => true
+        'site-pge' => true,
+        'form_name'=> 'site-pge'
     ]);
 
     $ch = curl_init(WEBHOOK_URL);

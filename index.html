@@ -624,8 +624,10 @@
                                 <div class="field">
                                     <label for="telefone">WhatsApp / Telefone</label>
                                     <input class="input" type="tel" id="telefone" name="telefone"
-                                        placeholder="(00) 90000-0000">
+                                        placeholder="(00) 90000-0000" required>
                                 </div>
+                                
+                                <input type="hidden" name="form_name" value="site-pge">
 
                                 <div class="field full">
                                     <label>Qual o principal desafio da sua clínica hoje?</label>
@@ -802,6 +804,15 @@
 
         // Abrir primeiro item
         document.querySelector('.faq-item')?.classList.add('open');
+
+        // Máscara de telefone simples
+        const telInput = document.getElementById('telefone');
+        if (telInput) {
+            telInput.addEventListener('input', function (e) {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+                e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            });
+        }
 
         // Form submit
         document.getElementById('contact-form')?.addEventListener('submit', async e => {
