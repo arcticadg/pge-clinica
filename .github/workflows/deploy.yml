@@ -36,6 +36,7 @@ jobs:
             --exclude='credentials.php' \
             --exclude='config.json' \
             --exclude='rate_limit.json' \
+            --exclude='smtp_config.php' \
             --exclude='uploads/' \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/
 
